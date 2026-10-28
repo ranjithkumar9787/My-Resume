@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Calculator</title>
+</head>
+<body>
+
+    <h2>Counter: <span id="count">0</span></h2>
+
+    <button onclick="increase()">Increase (+1)</button>
+    <button onclick="decrease()">Decrease (-1)</button>
+    <button onclick="reset()">Reset</button>
+
+    <h2>Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button onclick="add()">Add (+)</button>
+    <button onclick="sub()">Subtract (-)</button>
+    <button onclick="multi()">Multiply (*)</button>
+
+    <h3>Result: <span id="result">0</span></h3>
+
+    <script>
+        let count = 0;
+
+        function increase() {
+            count++;
+            document.getElementById("count").innerText = count;
+        }
+
+        function decrease() {
+            count--;
+            document.getElementById("count").innerText = count;
+        }
+
+        function reset() {
+            count = 0;
+            document.getElementById("count").innerText = count;
+        }
+
+        function add() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerText = a + b;
+        }
+
+        function sub() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerText = a - b;
+        }
+
+        function multi() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerText = a * b;
+        }
+    </script>
+
+</body>
+</html>
