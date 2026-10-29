@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P Ranjith Kumar - Resume</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #eef1f5;
+            color: #1f2937;
+            padding: 40px 20px;
+        }
+
+        .resume {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #172033;
+            color: white;
+            padding: 40px 50px;
+            border-bottom: 5px solid #c9a227;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .header .role {
+            font-size: 16px;
+            color: #d8dde7;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+            font-size: 14px;
+            color: #f1f3f7;
+        }
+
+        .content {
+            padding: 35px 50px 45px;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #172033;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c9a227;
+        }
+
+        .profile {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #4b5563;
+            text-align: justify;
+        }
+
+        /* Table Styling for Education & Technical Skills */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .custom-table th, .custom-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #172033;
+            font-weight: 700;
+        }
+
+        .custom-table tr:hover {
+            background-color: #fdfbf7;
+        }
+
+        /* Core Skills Grid */
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .technical-grid li {
+            font-size: 14px;
+            color: #374151;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .technical-grid li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #c9a227;
+            font-size: 8px;
+            top: 6px;
+        }
+
+        .highlight-box {
+            background: #fdf8e2;
+            border-left: 4px solid #c9a227;
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #172033;
+            margin-top: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .declaration {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .signature {
+            text-align: right;
+        }
+
+        .signature strong {
+            display: block;
+            margin-top: 5px;
+            color: #172033;
+        }
+
+        @media (max-width: 650px) {
+            body { padding: 15px; }
+            .header, .content { padding: 30px 25px; }
+            .technical-grid { grid-template-columns: 1fr; }
+            .contact { flex-direction: column; gap: 7px; }
+            .custom-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <header class="header">
+        <h1>P RANJITH KUMAR</h1>
+        <div class="role">MASTER OF COMPUTER APPLICATIONS | ASPIRING IT PROFESSIONAL</div>
+
+        <div class="contact">
+            <span>Chennai, Tamil Nadu</span>
+            <span>ranjivinod68@gmail.com</span>
+            <span>8939736644</span>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <!-- Profile Section -->
+        <section class="section">
+            <h2 class="section-title">Profile</h2>
+            <p class="profile">
+                Skilled, creative and innovative Information Technology professional.
+                I consider myself a responsible and orderly person with strong
+                communication and problem-solving abilities. I am looking forward
+                to gaining my first professional work experience and contributing
+                positively to an organization.
+            </p>
+        </section>
+
+        <!-- Core Skills Section -->
+        <section class="section">
+            <h2 class="section-title">Core Skills</h2>
+            <ul class="technical-grid" id="coreSkillsList"></ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Degree / Certificate</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+                <tbody id="eduTableBody"></tbody>
+            </table>
+        </section>
+
+        <!-- All Technical Skills (Table using map) -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills (All Skills via map)</h2>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Skill Name</th>
+                        <th>Category</th>
+                        <th>Proficiency</th>
+                    </tr>
+                </thead>
+                <tbody id="allTechSkillsBody"></tbody>
+            </table>
+        </section>
+
+        <!-- Filtered Technical Skills (Table using filter & map) -->
+        <section class="section">
+            <h2 class="section-title">Filtered Web & Programming Skills (via filter)</h2>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Skill Name</th>
+                        <th>Category</th>
+                        <th>Proficiency</th>
+                    </tr>
+                </thead>
+                <tbody id="filteredTechSkillsBody"></tbody>
+            </table>
+            
+            <!-- Find Method Showcase -->
+            <div id="findResult" class="highlight-box"></div>
+        </section>
+
+        <!-- Declaration Section -->
+        <section class="section">
+            <h2 class="section-title">Declaration</h2>
+            <p class="declaration">
+                I hereby declare that the above information is true to the best
+                of my knowledge and belief.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>
+                <p>Place: Chennai</p>
+                <p>Date: __________</p>
+            </div>
+
+            <div class="signature">
+                <p>Yours faithfully</p>
+                <strong id="signatureName"></strong>
+            </div>
+        </footer>
+
+    </main>
+
+</div>
+
+<script>
+    // 1. Core Soft Skills (map & innerHTML)
+    const coreSkills = [
+        "Excellent interpersonal and communication skills",
+        "Comprehensive problem-solving abilities",
+        "Excellent verbal and written communication",
+        "Ability to adapt to different situations",
+        "Collaborative and persistent worker"
+    ];
+
+    document.getElementById("coreSkillsList").innerHTML = 
+        coreSkills.map(skill => `<li>${skill}</li>`).join("");
+
+
+    // 2. Education Data (map & innerHTML)
+    const educationData = [
+        {
+            year: "2025 – 2027",
+            degree: "MASTER OF COMPUTER APPLICATIONS — CGPA: 7.0",
+            college: "S.A. Engineering College"
+        },
+        {
+            year: "2022 – 2025",
+            degree: "BACHELOR OF COMPUTER APPLICATION — CGPA: 7.1",
+            college: "Annai Violet Arts and Science College"
+        },
+        {
+            year: "2022",
+            degree: "HIGHER SECONDARY CERTIFICATE — 70%",
+            college: "Bharathi Matriculation Higher Secondary School"
+        },
+        {
+            year: "2020",
+            degree: "SECONDARY SCHOOL LEAVING CERTIFICATE — 94%",
+            college: "Bharathi Matriculation Higher Secondary School"
+        }
+    ];
+
+    document.getElementById("eduTableBody").innerHTML = educationData.map(edu => `
+        <tr>
+            <td><strong>${edu.year}</strong></td>
+            <td>${edu.degree}</td>
+            <td>${edu.college}</td>
+        </tr>
+    `).join("");
+
+
+    // 3. Technical Skills Data (Array of Objects)
+    const technicalSkills = [
+        { id: 1, name: "C & C++ Programming", category: "Programming", level: "Advanced" },
+        { id: 2, name: "HTML & CSS", category: "Web Development", level: "Intermediate" },
+        { id: 3, name: "JavaScript", category: "Web Development", level: "Intermediate" },
+        { id: 4, name: "Full Stack Development", category: "Web Development", level: "Learning" },
+        { id: 5, name: "MS Word & Excel", category: "Office Tools", level: "Advanced" }
+    ];
+
+    // MAP: All Technical Skills Table rendering
+    document.getElementById("allTechSkillsBody").innerHTML = technicalSkills.map(skill => `
+        <tr>
+            <td>${skill.id}</td>
+            <td><strong>${skill.name}</strong></td>
+            <td>${skill.category}</td>
+            <td>${skill.level}</td>
+        </tr>
+    `).join("");
+
+
+    // FILTER & MAP: Filtering only "Web Development" & "Programming" skills into Table format
+    const webAndProgSkills = technicalSkills.filter(skill => 
+        skill.category === "Web Development" || skill.category === "Programming"
+    );
+
+    document.getElementById("filteredTechSkillsBody").innerHTML = webAndProgSkills.map((skill, index) => `
+        <tr>
+            <td>${index + 1}</td>
+            <td><strong>${skill.name}</strong></td>
+            <td>${skill.category}</td>
+            <td>${skill.level}</td>
+        </tr>
+    `).join("");
+
+
+    // FIND: Searching for Full Stack Development skill specifically
+    const foundSkill = technicalSkills.find(skill => skill.name === "Full Stack Development");
+    if (foundSkill) {
+        document.getElementById("findResult").innerHTML = `
+            🔍 <strong>Find Result:</strong> Targeted Skill <strong>"${foundSkill.name}"</strong> 
+            found under category <em>"${foundSkill.category}"</em> (${foundSkill.level} level).
+        `;
+    }
+
+
+    // Footer Name setup
+    document.getElementById("signatureName").innerHTML = "(P Ranjith Kumar)";
+</script>
+
+</body>
+</html>
